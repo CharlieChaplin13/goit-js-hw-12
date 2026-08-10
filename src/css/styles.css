@@ -1,0 +1,176 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+/* Common styles */
+@import url('./reset.css');
+@import url('./base.css');
+
+/* ==================== FORM STYLES ==================== */
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+
+.form input {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  padding: 8px 16px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form input:hover {
+  border-color: #000000;
+}
+
+.form input:focus {
+  border-color: #4e75ff;
+}
+
+.form input::placeholder {
+  color: #808080;
+}
+
+.form button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background-color: #4e75ff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  min-width: 91px;
+  height: 40px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form button:hover,
+.form button:focus {
+  background-color: #6c8cff;
+}
+
+/* ==================== GALLERY STYLES ==================== */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Изменено с center на flex-start для ровных краев сетки */
+  gap: 24px;
+  padding: 0;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 36px;
+  max-width: 1128px; /* Ровно 1128px как на синем индикаторе Figma */
+  width: 100%;
+}
+
+.gallery-item {
+  /* Жесткий расчет под 3 карточки в ряд с учетом двух промежутков по 24px */
+  width: calc((100% - 48px) / 3);
+  height: 248px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #808080;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.gallery-link {
+  display: block;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==================== INFO PANEL STYLES ==================== */
+.image-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 48px;
+  flex-grow: 1;
+  border-top: 1px solid #808080;
+  background-color: #ffffff;
+  padding: 4px 0;
+}
+
+.image-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.image-info-label {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.image-info-value {
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+/* ==================== LOADER STYLES ==================== */
+.loader {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 40px auto;
+  border: 5px solid #eef1ff;
+  border-bottom-color: #4e75ff;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+
+.loader.is-hidden {
+  display: none;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
