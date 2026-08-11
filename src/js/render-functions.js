@@ -18,6 +18,10 @@ export function clearGallery() {
 }
 
 export function createGallery(images) {
+  if (!gallery) {
+    return;
+  }
+
   const markup = images
     .map(({
         webformatURL,
