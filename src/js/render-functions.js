@@ -8,7 +8,13 @@ const loadMoreBtn = document.querySelector('.load-more-btn');
 let lightbox = null;
 
 export function clearGallery() {
-  gallery.innerHTML = '';
+  if (gallery) {
+    gallery.innerHTML = '';
+  }
+  if (lightbox) {
+    lightbox.destroy(); 
+    lightbox = null;    
+  }
 }
 
 export function createGallery(images) {
@@ -77,9 +83,13 @@ export function hideLoader() {
 }
 
 export function showLoadMoreButton() {
-  loadMoreBtn.classList.remove('is-hidden');
+  if (loadMoreBtn) {
+    loadMoreBtn.classList.remove('is-hidden');
+  }
 }
 
 export function hideLoadMoreButton() {
-  loadMoreBtn.classList.add('is-hidden');
+  if (loadMoreBtn) {
+    loadMoreBtn.classList.add('is-hidden');
+  }
 }
